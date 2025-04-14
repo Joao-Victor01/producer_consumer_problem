@@ -1,0 +1,25 @@
+Para rodar o programa, se vc está usando windows:
+1. Abra o terminal do w64devkit (raiz do projeto\w64devkit\w64devkit.exe)
+2. verifique se já está na pasta correta:
+    - use o comando "ls", se o resultado apresentar esses arquivos abaixo, basta executar o programa (./main --prod 3 --cons 2 --buffer 10 --runtime 20):
+    Makefile                     buffer.h                     main.exe                     producerConsumerSemaphore.c
+buffer.c                     main.c                       producerConsumer.c
+
+3. Se não estiver na pasta correta, use o comando "cd" para navegar até a pasta src.
+
+_____________________________________________________________________________________________________________
+
+Observações:
+1. O comando de execução pode variar conforme queira, esses são os significados dos parâmetros:
+    3 threads produtoras (--prod 3)
+
+    2 threads consumidoras (--cons 2)
+
+    Tamanho do buffer igual a 10 (--buffer 10)
+
+    Execução total de 20 segundos (--runtime 20)
+
+2. Se o arquivo main.exe não estiver na pasta src, será necessário compilar o código novamente. Para isso, estando na pasta src, 
+basta executar o comando "make" no terminal do w64devkit.
+
+3. O arquivo Makefile está configurado para compilar apenas os códigos atuais (buffer.c, buffer.h, main.c), caso queira compilar mais códigos é ncessário ajustar o Makefile.
