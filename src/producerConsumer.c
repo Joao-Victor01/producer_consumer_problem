@@ -1,3 +1,5 @@
+//src\producerConsumer.c
+
 /*
 The Producer-Consumer problem:
 O problema se origina da sincronização de processos/trheads com o uso de um buffer compartilhado:
