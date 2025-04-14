@@ -15,7 +15,7 @@ O problema se origina da sincronização de processos/trheads com o uso de um bu
 #include <unistd.h>
 #include <time.h>
 
-#define BUFFER_SIZE 8
+#define BUFFER_SIZE 7
 
 int buffer[BUFFER_SIZE]; // Buffer compartilhado
 int count; // Contador de itens no buffer
@@ -45,7 +45,7 @@ int remove_item(int *item){
     }
 }
 
-void initialize_buffer() {
+void initialize_data() {
     count = 0; // Inicializa o contador de itens no buffer
 }
 
@@ -83,7 +83,7 @@ int main(){
     int qtdProdutores = 2; // Quantidade de threads produtoras
     int qtdConsumidores = 4; // Quantidade de threads consumidoras
 
-    initialize_buffer(); // Inicializa o buffer
+    initialize_data(); // Inicializa o buffer
 
     for(int i = 0; i < qtdProdutores; i++) {
         pthread_create(&tid, NULL, producer, NULL); // Cria threads produtoras
@@ -93,7 +93,6 @@ int main(){
     }
 
     sleep(mainSleepTime); // Tempo total de execução do programa
-    printf("Tempo de execucao do programa finalizado: %d\n", mainSleepTime);
     pthread_exit(NULL); // Finaliza todas as threads
     exit(0); // Encerra o programa
 }
