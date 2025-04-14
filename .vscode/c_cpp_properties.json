@@ -1,0 +1,17 @@
+{
+    "configurations": [
+      {
+        "name": "Win32",
+        "includePath": [
+          "${workspaceFolder}/w64devkit/include",
+          "${workspaceFolder}/**"
+        ],
+        "defines": [],
+        "compilerPath": "${workspaceFolder}/w64devkit/bin/gcc.exe",
+        "cStandard": "c11",
+        "intelliSenseMode": "windows-gcc-x64"
+      }
+    ],
+    "version": 4
+  }
+  
