@@ -17,7 +17,7 @@ def ler_arquivos_python(diretorio, ignorar_arquivos=None, ignorar_diretorios=Non
 
         for arquivo in arquivos:
             # Ignorar arquivos na lista de ignorar_arquivos
-            if arquivo.endswith('.py') and arquivo not in ignorar_arquivos:
+            if (arquivo.endswith('.sh') or arquivo.endswith('.c') or arquivo.endswith('.h')) and arquivo not in ignorar_arquivos:
                 caminho_completo = os.path.join(raiz, arquivo)
                 try:
                     with open(caminho_completo, 'r', encoding='utf-8') as f:
@@ -55,17 +55,17 @@ def gerar_pdf(codigos, output_pdf):
 
 if __name__ == "__main__":
     # Diretório raiz do projeto
-    diretorio_raiz = r"C:\Users\joao-\Desktop\TNS\famp\API02"
+    diretorio_raiz = r"\Users\joao-\Desktop\so\producer_consumer_problem"
     
     
     # Nome do arquivo PDF de saída
     output_pdf = "codigos.pdf"
 
     # Lista de arquivos a serem ignorados
-    ignorar_arquivos = ["api_teste.py", "cert.pem", "Guia de uso.pdf", "JSON_MODELS.txt", ".gitignore", "gerar_pdf.py", "key.pem", "requirements.txt", "pyvenv.cfg"]
+    ignorar_arquivos = ["api_teste.py", "cert.pem", "Guia de uso.pdf", "JSON_MODELS.txt", ".gitignore", "gerar_pdf.py", "key.pem", "instrucoes.txt", "pyvenv.cfg"]
 
     # Lista de diretórios a serem ignorados
-    ignorar_diretorios = ["Scripts", "utils", "__pycache__", "apitns", "Include", "Lib", "venv"]
+    ignorar_diretorios = ["w64devkit", "unused", "bin", "executavelLinux", ".vscode", "Lib", "venv"]
 
     # Ler todos os arquivos Python, ignorando os especificados
     codigos = ler_arquivos_python(diretorio_raiz, ignorar_arquivos, ignorar_diretorios)

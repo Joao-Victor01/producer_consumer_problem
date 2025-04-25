@@ -145,7 +145,7 @@ int main(int argc, char *argv[]) {
     sleep(runtime_seconds);
     
     // Exibe as métricas (simples contadores)
-    printf("\n== Dadis da Execucao ==\n");
+    printf("\n== Dados da Execucao ==\n");
     printf("Itens produzidos: %d\n", produced_count);
     printf("Itens consumidos: %d\n", consumed_count);
     

@@ -1,3 +1,5 @@
+.PHONY: all clean
+
 CC = gcc
 CFLAGS = -Wall -pthread
 
