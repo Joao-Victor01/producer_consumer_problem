@@ -1,3 +1,5 @@
+//src\main.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -40,7 +42,7 @@ void *producer(void *param) {
             produced_count++;
             printf("Produzido: %d | Buffer count: %d\n", item, buffer.count);
         } else {
-            printf("Erro: Buffer cheio (inserção falhou)\n");
+            printf("Erro: Buffer cheio (insercao falhou)\n");
         }
         
         pthread_mutex_unlock(&mutex);
