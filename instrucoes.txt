@@ -24,7 +24,7 @@ basta executar o comando "make" no terminal do w64devkit.
 
 3. O arquivo Makefile está configurado para compilar apenas os códigos atuais (buffer.c, buffer.h, main.c), caso queira compilar mais códigos é ncessário ajustar o Makefile.
 
-
+chmod +x run.sh
 
 ./run.sh nosync  
 ./run.sh sem     --prod 3 --cons 2 --buffer 10 --runtime 15
