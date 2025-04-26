@@ -1,29 +1,34 @@
 // src/mutexCond.c
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
-#include "buffer.h"
-#include <stdlib.h>
 #include <time.h>
+#include "buffer.h"
 
 Buffer buffer;
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t not_full = PTHREAD_COND_INITIALIZER;
+pthread_mutex_t mutex    = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t not_full  = PTHREAD_COND_INITIALIZER;
 pthread_cond_t not_empty = PTHREAD_COND_INITIALIZER;
 
-void* producer (void *param) {
+// métricas
+int produced_count = 0;
+int consumed_count = 0;
+
+void* producer(void *param) {
     int item;
     while (1) {
-        sleep(1); // Simula o tempo de produção
+        sleep(1);
         item = rand() % 100;
 
         pthread_mutex_lock(&mutex);
-        while (buffer.count == buffer.capacity) {
+        while (buffer.count == buffer.capacity)
             pthread_cond_wait(&not_full, &mutex);
-        }
 
         insert_item(&buffer, item);
-        printf("[Prod %lu] Inserido: %d | count = %d\n", (unsigned long)pthread_self(), item, buffer.count);
+        produced_count++;
+        printf("[MUTEX %lu] Inserido: %d | count=%d\n",
+               (unsigned long)pthread_self(), item, buffer.count);
 
         pthread_cond_signal(&not_empty);
         pthread_mutex_unlock(&mutex);
@@ -31,18 +36,19 @@ void* producer (void *param) {
     return NULL;
 }
 
-void* consumer (void *param) {
+void* consumer(void *param) {
     int item;
     while (1) {
-        sleep(2); // Simula o tempo de consumo
+        sleep(2);
 
         pthread_mutex_lock(&mutex);
-        while (buffer.count == 0) {
+        while (buffer.count == 0)
             pthread_cond_wait(&not_empty, &mutex);
-        }
 
         remove_item(&buffer, &item);
-        printf("[Cons %lu] Removido: %d | count = %d\n", (unsigned long)pthread_self(), item, buffer.count);
+        consumed_count++;
+        printf("[MUTEX %lu] Removido: %d | count=%d\n",
+               (unsigned long)pthread_self(), item, buffer.count);
 
         pthread_cond_signal(&not_full);
         pthread_mutex_unlock(&mutex);
@@ -51,29 +57,28 @@ void* consumer (void *param) {
 }
 
 int main() {
-    srand((unsigned int)time(NULL));
-
+    srand((unsigned)time(NULL));
     if (init_buffer(&buffer, 5) != 0) {
-        printf("Erro ao inicializar o buffer\n");
+        fprintf(stderr, "Erro ao inicializar buffer\n");
         exit(1);
     }
 
-    int mainSleepTime = 10;
-    int qtdProdutores = 2;
-    int qtdConsumidores = 4;
+    int runtime = 10;
+    int nprod   = 2;
+    int ncons   = 4;
 
-    pthread_t producers[qtdProdutores];
-    pthread_t consumers[qtdConsumidores];
+    pthread_t prod[nprod], cons[ncons];
+    for (int i = 0; i < nprod; i++)
+        pthread_create(&prod[i], NULL, producer, NULL);
+    for (int i = 0; i < ncons; i++)
+        pthread_create(&cons[i], NULL, consumer, NULL);
 
-    for (int i = 0; i < qtdProdutores; i++) {
-        pthread_create(&producers[i], NULL, producer, NULL);
-    }
-    for (int i = 0; i < qtdConsumidores; i++) {
-        pthread_create(&consumers[i], NULL, consumer, NULL);
-    }
+    sleep(runtime);
 
-    sleep(mainSleepTime);
 
-    printf("\n== Execucao Finalizada (mutexCond) ==\n");
-    return 0;
+    printf("\n== EXECUÇÃO FINALIZADA (MUTEX) ==\n");
+    printf("Itens produzidos: %d\n", produced_count);
+    printf("Itens consumidos: %d\n", consumed_count);
+
+    exit(0);
 }

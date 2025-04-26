@@ -2,8 +2,9 @@
 
 #ifndef MONITOR_H
 #define MONITOR_H
-
 #define BUFFER_SIZE 5
+void monitor_print_metrics();
+
 
 // Estrutura do buffer
 typedef struct {

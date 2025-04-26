@@ -1,4 +1,4 @@
-// main_nosync.c (sem parsing)
+// src/main_nosync.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -49,7 +49,9 @@ int main(int argc, char **argv) {
         pthread_create(&cons[i], NULL, consumer, NULL);
 
     sleep(runtime_seconds);
-    printf("\n[NOSYNC] Itens produzidos=%d, consumidos=%d\n",
-           produced_count, consumed_count);
-    return 0;
+    printf("\n== EXECUCAO FINALIZADA (NOSYNC) ==\n");
+    printf("Itens produzidos: %d\n", produced_count);
+    printf("Itens consumidos: %d\n", consumed_count);
+
+    exit(0);
 }

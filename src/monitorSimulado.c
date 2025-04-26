@@ -1,9 +1,9 @@
-//src\monitorSimulado.c
-
+// src/monitorSimulado.c
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h>
 #include <unistd.h>
+#include <pthread.h>
+#include <time.h>
 #include "monitor.h"
 
 void* producer(void* arg) {
@@ -18,29 +18,27 @@ void* producer(void* arg) {
 void* consumer(void* arg) {
     while (1) {
         sleep(2);
-        int item = monitor_remove();
+        monitor_remove();
     }
     return NULL;
 }
 
 int main() {
-    srand(time(NULL));
+    srand((unsigned)time(NULL));
     monitor_init();
 
-    int qtdProd = 2;
-    int qtdCons = 3;
-    pthread_t prod[qtdProd], cons[qtdCons];
+    int runtime = 15;
+    int nprod   = 3;
+    int ncons   = 2;
+    pthread_t prod[nprod], cons[ncons];
 
-    for (int i = 0; i < qtdProd; i++) {
+    for (int i = 0; i < nprod; i++)
         pthread_create(&prod[i], NULL, producer, NULL);
-    }
-
-    for (int i = 0; i < qtdCons; i++) {
+    for (int i = 0; i < ncons; i++)
         pthread_create(&cons[i], NULL, consumer, NULL);
-    }
 
-    sleep(10);
+    sleep(runtime);
+    monitor_print_metrics();
     monitor_destroy();
-    pthread_exit(NULL);
-    return 0;
+    exit(0);
 }
