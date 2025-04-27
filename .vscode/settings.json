@@ -1,6 +1,37 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "random": "c"
+        "random": "c",
+        "any": "c",
+        "array": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "ciso646": "c",
+        "coroutine": "c",
+        "deque": "c",
+        "forward_list": "c",
+        "list": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "unordered_set": "c",
+        "vector": "c",
+        "string_view": "c",
+        "rope": "c",
+        "slist": "c",
+        "format": "c",
+        "fstream": "c",
+        "istream": "c",
+        "ranges": "c",
+        "span": "c",
+        "sstream": "c",
+        "stacktrace": "c",
+        "text_encoding": "c",
+        "functional": "c",
+        "regex": "c",
+        "type_traits": "c",
+        "tuple": "c",
+        "valarray": "c",
+        "memory_resource": "c",
+        "streambuf": "c"
     }
 }
