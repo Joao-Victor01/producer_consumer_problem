@@ -1,8 +1,8 @@
-Projeto The Producer-Consumer Problem
+-- Projeto The Producer-Consumer Problem
 
 Este repositório contém diversas implementações do problema Produtor-Consumidor em C, permitindo comparar abordagens de sincronização diferentes (sem sincronização, semáforos+mutex, mutex+condição e monitor simulado) e coletar métricas de desempenho.
 
-Do que se trata o projeto
+-- Do que se trata o projeto
 
 O objetivo é demonstrar e comparar quatro versões de uma solução para o problema clássico do produtor-consumidor:
 
@@ -16,11 +16,11 @@ Versão monitor: uso de um monitor simulado com mutex e variáveis de condição
 
 Cada versão executa produtores e consumidores que interagem com um buffer circular, registra métricas (throughput de produção/consumo, latência média e utilização do buffer) e exibe relatórios ao final.
 
-Imagem da interface
+-- Imagem da interface
 
 Não há interface gráfica neste projeto. A interação é feita via linha de comando e os resultados são exibidos no terminal.
 
-Como compilar e executar
+-- Como compilar e executar
 
 1. O comando de execução pode variar conforme queira, esses são os significados dos parâmetros:
     3 threads produtoras (--prod 3)
@@ -58,7 +58,7 @@ chmod +x run.sh
 ./run.sh monitor --prod 3 --cons 2 --buffer 10 --runtime 15
 
 
-Quem fez o que?
+-- Quem fez o que?
 João Victor Monteiro de Oliveira - Buffer cirular; Versão NoSync, Versão Semáforo
 Cássio Vittori - Configurações e ajustes para rodar o projeto em Linux, Implementação e comparação de métricas
 Henrique Bandeira - MutexCond, Monitor, Monitor Simulado
