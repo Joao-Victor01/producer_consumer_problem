@@ -1,0 +1,44 @@
+[MUTEX 1] Inserido: 41 | count=1
+[MUTEX 2] Inserido: 41 | count=2
+[MUTEX 5] Removido: 41 | count=1
+[MUTEX 4] Removido: 41 | count=0
+[MUTEX 2] Inserido: 67 | count=1
+[MUTEX 1] Inserido: 67 | count=2
+[MUTEX 3] Removido: 67 | count=1
+[MUTEX 6] Removido: 67 | count=0
+[MUTEX 1] Inserido: 34 | count=1
+[MUTEX 2] Inserido: 34 | count=2
+[MUTEX 6] Removido: 34 | count=1
+[MUTEX 3] Removido: 34 | count=0
+[MUTEX 2] Inserido: 0 | count=1
+[MUTEX 4] Removido: 0 | count=0
+[MUTEX 1] Inserido: 0 | count=1
+[MUTEX 5] Removido: 0 | count=0
+[MUTEX 1] Inserido: 69 | count=1
+[MUTEX 2] Inserido: 69 | count=2
+[MUTEX 3] Removido: 69 | count=1
+[MUTEX 6] Removido: 69 | count=0
+[MUTEX 2] Inserido: 24 | count=1
+[MUTEX 4] Removido: 24 | count=0
+[MUTEX 1] Inserido: 24 | count=1
+[MUTEX 5] Removido: 24 | count=0
+[MUTEX 2] Inserido: 78 | count=1
+[MUTEX 1] Inserido: 78 | count=2
+[MUTEX 6] Removido: 78 | count=1
+[MUTEX 3] Removido: 78 | count=0
+[MUTEX 1] Inserido: 58 | count=1
+[MUTEX 2] Inserido: 58 | count=2
+[MUTEX 5] Removido: 58 | count=1
+[MUTEX 4] Removido: 58 | count=0
+[MUTEX 1] Inserido: 62 | count=1
+[MUTEX 2] Inserido: 62 | count=2
+
+== EXECUÇÃO FINALIZADA (MUTEX) ==
+Itens produzidos: 18
+Itens consumidos: 16
+
+=== Métricas ===
+Throughput (produção): 0.50
+Throughput (consumo):  0.60
+Latência média:        666.85
+Utilização do buffer:  0.00

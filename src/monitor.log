@@ -1,0 +1,43 @@
+[MON 1] Inserido: 41 | count=1
+[MON 2] Inserido: 41 | count=2
+[MON 3] Inserido: 41 | count=3
+[MON 4] Removido: 41 | count=2
+[MON 1] Inserido: 67 | count=3
+[MON 2] Inserido: 67 | count=4
+[MON 3] Inserido: 67 | count=5
+[MON 5] Removido: 41 | count=4
+[MON 2] Inserido: 34 | count=5
+[MON 4] Removido: 41 | count=4
+[MON 1] Inserido: 34 | count=5
+[MON 5] Removido: 67 | count=4
+[MON 3] Inserido: 34 | count=5
+[MON 4] Removido: 67 | count=4
+[MON 2] Inserido: 0 | count=5
+[MON 5] Removido: 67 | count=4
+[MON 1] Inserido: 0 | count=5
+[MON 4] Removido: 34 | count=4
+[MON 3] Inserido: 0 | count=5
+[MON 5] Removido: 34 | count=4
+[MON 2] Inserido: 69 | count=5
+[MON 4] Removido: 34 | count=4
+[MON 1] Inserido: 69 | count=5
+[MON 5] Removido: 0 | count=4
+[MON 3] Inserido: 69 | count=5
+[MON 4] Removido: 0 | count=4
+[MON 2] Inserido: 24 | count=5
+[MON 5] Removido: 0 | count=4
+[MON 1] Inserido: 24 | count=5
+[MON 4] Removido: 69 | count=4
+[MON 3] Inserido: 24 | count=5
+[MON 5] Removido: 69 | count=4
+[MON 2] Inserido: 78 | count=5
+
+== EXECUCAO FINALIZADA (MON) ==
+Itens produzidos: 19
+Itens consumidos: 14
+
+=== Métricas ===
+Throughput (produção): 0.33
+Throughput (consumo):  0.40
+Latência média:        2517.43
+Utilização do buffer:  0.00

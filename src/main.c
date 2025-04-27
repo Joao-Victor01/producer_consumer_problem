@@ -7,6 +7,7 @@
 #include <time.h>
 #include <getopt.h>
 #include "buffer.h"
+#include "metrics.h"
 
 #define DEFAULT_BUFFER_SIZE 7
 #define DEFAULT_PROD        2
@@ -16,6 +17,7 @@
 Buffer buffer;
 pthread_mutex_t mutex;
 sem_t empty, full;
+Metrics metrics;
 
 int produced_count = 0;
 int consumed_count = 0;
@@ -36,6 +38,7 @@ void *producer(void *param) {
 
         if (insert_item(&buffer, item) == 0) {
             produced_count++;
+            record_production(&metrics, item);
             printf("[SEM %lu] Produzido: %d | count=%d\n",
                    (unsigned long)pthread_self(), item, buffer.count);
         } else {
@@ -59,6 +62,12 @@ void *consumer(void *param) {
 
         if (remove_item(&buffer, &item) == 0) {
             consumed_count++;
+            for (int i = 0; i < metrics.total_produced; i++) {
+                if (metrics.produced_items[i].item == item) {
+                    record_consumption(&metrics, item, metrics.produced_items[i].production_time);
+                    break;
+                }
+            }
             printf("[SEM %lu] Consumido: %d | count=%d\n",
                    (unsigned long)pthread_self(), item, buffer.count);
         } else {
@@ -70,6 +79,14 @@ void *consumer(void *param) {
         sem_post(&empty);
     }
     return NULL;
+}
+// Thread para amostrar a utilização do buffer
+void *monitor_buffer(void *param) {
+    while (1) {
+        usleep(100000); // amostra a cada 100ms
+        sample_buffer_usage(&metrics, buffer.count, buffer.capacity);
+    }
+    return NULL;   
 }
 
 void print_usage(char *prog_name) {
@@ -102,15 +119,18 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Erro ao alocar buffer\n");
         exit(EXIT_FAILURE);
     }
+    init_metrics(&metrics, buffer_size); 
     pthread_mutex_init(&mutex, NULL);
     sem_init(&empty, 0, buffer.capacity);
     sem_init(&full,  0, 0);
 
-    pthread_t prod[numProd], cons[numCons];
+    pthread_t prod[numProd], cons[numCons], monitor_thread;
     for (int i = 0; i < numProd; i++)
         pthread_create(&prod[i], NULL, producer, NULL);
     for (int i = 0; i < numCons; i++)
         pthread_create(&cons[i], NULL, consumer, NULL);
+
+    pthread_create(&monitor_thread, NULL, monitor_buffer, NULL);
 
     sleep(runtime_seconds);
 
@@ -118,6 +138,7 @@ int main(int argc, char *argv[]) {
     printf("Itens produzidos: %d\n", produced_count);
     printf("Itens consumidos: %d\n", consumed_count);
 
+    calculate_metrics(&metrics, runtime_seconds);
     // exit mata todas as threads
     exit(0);
 }

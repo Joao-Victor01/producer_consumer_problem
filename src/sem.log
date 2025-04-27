@@ -1,0 +1,44 @@
+[SEM 1] Produzido: 41 | count=1
+[SEM 2] Produzido: 41 | count=2
+[SEM 5] Consumido: 41 | count=1
+[SEM 6] Consumido: 41 | count=0
+[SEM 1] Produzido: 67 | count=1
+[SEM 2] Produzido: 67 | count=2
+[SEM 4] Consumido: 67 | count=1
+[SEM 3] Consumido: 67 | count=0
+[SEM 2] Produzido: 34 | count=1
+[SEM 1] Produzido: 34 | count=2
+[SEM 3] Consumido: 34 | count=1
+[SEM 4] Consumido: 34 | count=0
+[SEM 1] Produzido: 0 | count=1
+[SEM 2] Produzido: 0 | count=2
+[SEM 5] Consumido: 0 | count=1
+[SEM 6] Consumido: 0 | count=0
+[SEM 2] Produzido: 69 | count=1
+[SEM 1] Produzido: 69 | count=2
+[SEM 6] Consumido: 69 | count=1
+[SEM 5] Consumido: 69 | count=0
+[SEM 1] Produzido: 24 | count=1
+[SEM 3] Consumido: 24 | count=0
+[SEM 2] Produzido: 24 | count=1
+[SEM 4] Consumido: 24 | count=0
+[SEM 2] Produzido: 78 | count=1
+[SEM 1] Produzido: 78 | count=2
+[SEM 3] Consumido: 78 | count=1
+[SEM 4] Consumido: 78 | count=0
+[SEM 1] Produzido: 58 | count=1
+[SEM 2] Produzido: 58 | count=2
+[SEM 5] Consumido: 58 | count=1
+[SEM 6] Consumido: 58 | count=0
+[SEM 2] Produzido: 62 | count=1
+[SEM 1] Produzido: 62 | count=2
+
+== EXECUCAO FINALIZADA (SEM) ==
+Itens produzidos: 18
+Itens consumidos: 16
+
+=== Métricas ===
+Throughput (produção): 0.70
+Throughput (consumo):  0.80
+Latência média:        503.01
+Utilização do buffer:  0.00

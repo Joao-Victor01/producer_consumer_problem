@@ -2,11 +2,13 @@
 #include "monitor.h"
 #include <stdio.h>
 #include <pthread.h>
+#include "metrics.h"
 
 static Buffer buffer;
 static pthread_mutex_t mutex    = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t not_full  = PTHREAD_COND_INITIALIZER;
 static pthread_cond_t not_empty = PTHREAD_COND_INITIALIZER;
+
 
 // métricas
 static int produced_count = 0;
@@ -63,3 +65,12 @@ void monitor_print_metrics() {
     printf("Itens produzidos: %d\n", produced_count);
     printf("Itens consumidos: %d\n", consumed_count);
 }
+
+int monitor_get_count() {
+    return buffer.count;
+}
+
+int monitor_get_capacity() {
+    return BUFFER_SIZE;
+}
+

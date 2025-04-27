@@ -1,0 +1,44 @@
+[NOSYNC] Produzido: 41 | count=1
+[NOSYNC] Produzido: 41 | count=2
+[NOSYNC] Consumido: 41 | count=1
+[NOSYNC] Consumido: 41 | count=0
+[NOSYNC] Buffer vazio
+[NOSYNC] Buffer vazio
+[NOSYNC] Produzido: 67 | count=1
+[NOSYNC] Produzido: 67 | count=2
+[NOSYNC] Produzido: 34 | count=3
+[NOSYNC] Produzido: 34 | count=4
+[NOSYNC] Consumido: 67 | count=3
+[NOSYNC] Consumido: 67 | count=2
+[NOSYNC] Consumido: 34 | count=1
+[NOSYNC] Consumido: 34 | count=0
+[NOSYNC] Produzido: 0 | count=1
+[NOSYNC] Produzido: 0 | count=2
+[NOSYNC] Produzido: 69 | count=3
+[NOSYNC] Produzido: 69 | count=4
+[NOSYNC] Consumido: 69 | count=1
+[NOSYNC] Consumido: 0 | count=1
+[NOSYNC] Consumido: 0 | count=1
+[NOSYNC] Consumido: 69 | count=0
+[NOSYNC] Produzido: 24 | count=1
+[NOSYNC] Produzido: 24 | count=2
+[NOSYNC] Produzido: 78 | count=3
+[NOSYNC] Produzido: 78 | count=4
+[NOSYNC] Consumido: 24 | count=2
+[NOSYNC] Consumido: 24 | count=2
+[NOSYNC] Consumido: 78 | count=1
+[NOSYNC] Consumido: 78 | count=0
+[NOSYNC] Produzido: 58 | count=1
+[NOSYNC] Produzido: 58 | count=2
+[NOSYNC] Produzido: 62 | count=3
+[NOSYNC] Produzido: 62 | count=4
+
+== EXECUCAO FINALIZADA (NOSYNC) ==
+Itens produzidos: 18
+Itens consumidos: 14
+
+=== Métricas ===
+Throughput (produção): 0.70
+Throughput (consumo):  0.80
+Latência média:        1258.29
+Utilização do buffer:  0.00

@@ -19,5 +19,8 @@ void monitor_init();
 void monitor_destroy();
 void monitor_insert(int item);
 int monitor_remove();
+int monitor_get_count();
+int monitor_get_capacity();
+
 
 #endif
