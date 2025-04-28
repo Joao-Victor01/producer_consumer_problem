@@ -25,17 +25,17 @@
  /**
   * Inicializa o buffer circular com a capacidade especificada.
   * 
-  * @param buffer: Ponteiro para a estrutura do buffer a ser inicializada.
-  * @param capacity: Capacidade máxima do buffer (número de itens que pode armazenar).
+  * @param buffer: Ponteiro para a estrutura do buffer inicializada.
+  * @param capacity: Capacidade máxima do buffer.
   * @return 0 em caso de sucesso, -1 em caso de falha (ex.: falha na alocação de memória).
   */
  int init_buffer(Buffer *buffer, int capacity) {
      // Aloca memória para o array que armazenará os itens do buffer.
      buffer->data = (int*) malloc(capacity * sizeof(int));
-     if (!buffer->data) // Verifica se a alocação de memória falhou.
+     if (!buffer->data) 
          return -1;
      
-     // Define os demais atributos do buffer.
+     // atributos do buffer.
      buffer->capacity = capacity; // Capacidade máxima do buffer.
      buffer->count = 0;           // Número atual de itens no buffer.
      buffer->front = 0;           // Índice do início (primeiro item a ser removido).
@@ -46,7 +46,7 @@
  /**
   * Libera os recursos alocados pelo buffer.
   * 
-  * @param buffer: Ponteiro para a estrutura do buffer a ser destruída.
+  * @param buffer: Ponteiro para a estrutura do buffer que será destruída.
   */
  void destroy_buffer(Buffer *buffer) {
      // Libera a memória alocada para os dados do buffer, caso o buffer tenha sido inicializado.
@@ -58,12 +58,12 @@
   * Insere um item no buffer circular.
   * 
   * @param buffer: Ponteiro para a estrutura do buffer.
-  * @param item: Item a ser inserido no buffer.
+  * @param item: Item inserido no buffer.
   * @return 0 em caso de sucesso, -1 se o buffer estiver cheio.
   */
  int insert_item(Buffer *buffer, int item) {
      if (buffer->count == buffer->capacity) // Verifica se o buffer está cheio.
-         return -1; // Retorna erro, pois não há espaço disponível.
+         return -1; // Retorna erro se tiver cheio.
      
      // Insere o item na posição indicada por `rear` e atualiza o índice.
      buffer->data[buffer->rear] = item;
@@ -81,7 +81,7 @@
   */
  int remove_item(Buffer *buffer, int *item) {
      if (buffer->count == 0) // Verifica se o buffer está vazio.
-         return -1; // Retorna erro, pois não há itens para remover.
+         return -1; // Retorna erro se não tem item pra remover.
      
      // Remove o item da posição indicada por `front` e atualiza o índice.
      *item = buffer->data[buffer->front];
