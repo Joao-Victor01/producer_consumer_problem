@@ -31,29 +31,33 @@ Não há interface gráfica neste projeto. A interação é feita via linha de c
 
     Execução total de 20 segundos (--runtime 20)
 
-2. Antes de executar o programa no Ambiente Linux é necessário baixar as bibliotecas essencias para rodar (gcc, make e outros utilitários) 
+2. Antes de executar o programa no Ambiente Linux é necessário baixar as bibliotecas essencias para rodar (gcc, make e outros utilitários):
 
 $ sudo apt update 
 
 $ sudo apt install build essential
 
-3. Agora podemos utilizar do MakeFile para compilar facilmente nosso programa, seguindo os comandos:
+3. Também é necessário localizar o diretório no terminal até a pasta /src, por exemplo:
+
+cd /mnt/c/Users/Aluno/Desktop/producer_consumer_problem/src
+
+4. Agora podemos utilizar do MakeFile para compilar facilmente nosso programa, seguindo os comandos:
 
 make clean (apenas para garantir que não há executáveis no diretório)
 
 make all (monta os executáveis necessários)
 
-4. Utilizamos do script localizado em run.sh para executarmos cada versão do programa, então para habilitar o nosso script no ambiente:
+5. Utilizamos do script localizado em run.sh para executarmos cada versão do programa, então para habilitar o nosso script no ambiente:
 
 chmod +x run.sh
 
-5. Da mesma forma utilizamos do compare_all.sh para facilmente visualizar e comparar todas as métricas:
+6. Da mesma forma utilizamos do compare_all.sh para facilmente visualizar e comparar todas as métricas:
 
 chmod +x compare_all.sh, e depois:
 
 ./compare_all.sh
 
-6. E por fim, é possível executar todas as versões com:
+7. E por fim, é possível executar todas as versões com:
    
 ./run.sh nosync --prod 3 --cons 2 --buffer 10 --runtime 15
 
