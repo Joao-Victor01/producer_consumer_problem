@@ -70,5 +70,7 @@ chmod +x compare_all.sh, e depois:
 
 -- Quem fez o que?
 João Victor Monteiro de Oliveira - Buffer cirular; Versão NoSync, Versão Semáforo
+
 Cássio Vittori - Configurações e ajustes para rodar o projeto em Linux, Implementação e comparação de métricas
+
 Henrique Bandeira - MutexCond, Monitor, Monitor Simulado
