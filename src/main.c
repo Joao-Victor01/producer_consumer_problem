@@ -78,7 +78,7 @@ void *consumer(void *param) {
     while (1) {
         sleep(2);
 
-        sem_wait(&full);// Decrementa empty (espera vaga livre)
+        sem_wait(&full);// Decrementa full (espera item no buffer para consumir)
         pthread_mutex_lock(&mutex); //exclusão mútua - seção crítica 
 
         if (remove_item(&buffer, &item) == 0) {
