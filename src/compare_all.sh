@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Configurações
-RUNTIME=10
-BUFFER_SIZE=7
-PRODUCERS=2
-CONSUMERS=4
+RUNTIME=15
+BUFFER_SIZE=10
+PRODUCERS=3
+CONSUMERS=2
 
 # Função para executar uma versão e extrair métricas
 run_version() {
