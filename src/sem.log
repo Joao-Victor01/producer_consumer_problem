@@ -1,44 +1,48 @@
-[SEM 1] Produzido: 41 | count=1
-[SEM 2] Produzido: 41 | count=2
-[SEM 5] Consumido: 41 | count=1
-[SEM 6] Consumido: 41 | count=0
-[SEM 1] Produzido: 67 | count=1
-[SEM 2] Produzido: 67 | count=2
-[SEM 4] Consumido: 67 | count=1
-[SEM 3] Consumido: 67 | count=0
-[SEM 2] Produzido: 34 | count=1
-[SEM 1] Produzido: 34 | count=2
-[SEM 3] Consumido: 34 | count=1
-[SEM 4] Consumido: 34 | count=0
-[SEM 1] Produzido: 0 | count=1
-[SEM 2] Produzido: 0 | count=2
-[SEM 5] Consumido: 0 | count=1
-[SEM 6] Consumido: 0 | count=0
-[SEM 2] Produzido: 69 | count=1
-[SEM 1] Produzido: 69 | count=2
-[SEM 6] Consumido: 69 | count=1
-[SEM 5] Consumido: 69 | count=0
-[SEM 1] Produzido: 24 | count=1
-[SEM 3] Consumido: 24 | count=0
-[SEM 2] Produzido: 24 | count=1
-[SEM 4] Consumido: 24 | count=0
-[SEM 2] Produzido: 78 | count=1
-[SEM 1] Produzido: 78 | count=2
-[SEM 3] Consumido: 78 | count=1
-[SEM 4] Consumido: 78 | count=0
-[SEM 1] Produzido: 58 | count=1
-[SEM 2] Produzido: 58 | count=2
-[SEM 5] Consumido: 58 | count=1
-[SEM 6] Consumido: 58 | count=0
-[SEM 2] Produzido: 62 | count=1
-[SEM 1] Produzido: 62 | count=2
+[SEM 139991913432768] Produzido: 35 | count=1
+[SEM 139991905040064] Produzido: 95 | count=2
+[SEM 139991896647360] Produzido: 43 | count=3
+[SEM 139991888254656] Consumido: 35 | count=2
+[SEM 139991879861952] Consumido: 95 | count=1
+[SEM 139991913432768] Produzido: 23 | count=2
+[SEM 139991905040064] Produzido: 19 | count=3
+[SEM 139991896647360] Produzido: 30 | count=4
+[SEM 139991905040064] Produzido: 51 | count=5
+[SEM 139991913432768] Produzido: 90 | count=6
+[SEM 139991896647360] Produzido: 88 | count=7
+[SEM 139991888254656] Consumido: 43 | count=6
+[SEM 139991879861952] Consumido: 23 | count=5
+[SEM 139991913432768] Produzido: 21 | count=6
+[SEM 139991905040064] Produzido: 25 | count=7
+[SEM 139991896647360] Produzido: 58 | count=8
+[SEM 139991913432768] Produzido: 77 | count=9
+[SEM 139991905040064] Produzido: 76 | count=10
+[SEM 139991888254656] Consumido: 19 | count=9
+[SEM 139991896647360] Produzido: 32 | count=10
+[SEM 139991879861952] Consumido: 30 | count=9
+[SEM 139991913432768] Produzido: 9 | count=10
+[SEM 139991888254656] Consumido: 51 | count=9
+[SEM 139991879861952] Consumido: 90 | count=8
+[SEM 139991905040064] Produzido: 49 | count=9
+[SEM 139991896647360] Produzido: 14 | count=10
+[SEM 139991888254656] Consumido: 88 | count=9
+[SEM 139991913432768] Produzido: 26 | count=10
+[SEM 139991879861952] Consumido: 21 | count=9
+[SEM 139991905040064] Produzido: 16 | count=10
+[SEM 139991888254656] Consumido: 25 | count=9
+[SEM 139991896647360] Produzido: 36 | count=10
+[SEM 139991879861952] Consumido: 58 | count=9
+[SEM 139991913432768] Produzido: 9 | count=10
+[SEM 139991888254656] Consumido: 77 | count=9
+[SEM 139991905040064] Produzido: 3 | count=10
+[SEM 139991879861952] Consumido: 76 | count=9
+[SEM 139991896647360] Produzido: 21 | count=10
 
 == EXECUCAO FINALIZADA (SEM) ==
-Itens produzidos: 18
-Itens consumidos: 16
+Itens produzidos: 24
+Itens consumidos: 14
 
-=== Métricas ===
-Throughput (produção): 0.70
-Throughput (consumo):  0.80
-Latência média:        503.01
-Utilização do buffer:  0.00
+=== Metricas ===
+Throughput (producao): 0.67
+Throughput (consumo):  0.67
+Latencia media:        3800.91
+Utilizacao do buffer:  81.88
