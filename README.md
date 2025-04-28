@@ -47,7 +47,13 @@ make all (monta os executáveis necessários)
 
 chmod +x run.sh
 
-5. E por fim, é possível executar todas as versões com:
+5. Da mesma forma utilizamos do compare_all.sh para facilmente visualizar e comparar todas as métricas:
+
+chmod +x compare_all.sh, e depois:
+
+./compare_all.sh
+
+6. E por fim, é possível executar todas as versões com:
    
 ./run.sh nosync --prod 3 --cons 2 --buffer 10 --runtime 15
 
